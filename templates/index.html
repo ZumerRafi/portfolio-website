@@ -1,10 +1,9 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,64 +11,62 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <!-- PARTICLES -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
+
 {% if success %}
-
 <div class="toast-success" id="toast">
+    <span>✔ Message Sent Successfully!</span>
+</div>
+{% endif %}
 
-    <span>
-        ✔ Message Sent Successfully!
-    </span>
+<!-- MOBILE MENU BUTTON -->
 
-    <button class="close-toast" onclick="closeToast()">
-        ×
-    </button>
+<div class="menu-toggle" id="menu-toggle">
+
+    <i class="fas fa-bars"></i>
 
 </div>
 
-{% endif %}
+<!-- NAVIGATION -->
 
-<!-- PARTICLE BACKGROUND -->
-<div id="particles-js"></div>
+<nav id="navbar">
 
-<!-- NAVBAR -->
-<nav>
+    <div class="logo">
+        Ilya Haider
+    </div>
 
-    <h2 class="logo">Ilya Haider</h2>
-
-    <ul>
+    <ul class="nav-links">
 
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
 
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#certifications">Certificates</a></li>
+
+        <li><a href="#contact">Contact</a></li>
 
     </ul>
 
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="profile-container">
+    <div class="hero-content">
 
-    <img src="{% static 'images/profile.jpeg' %}"
-         alt="Ilya Haider"
-         class="profile-pic">
+        <img src="{% static 'images/profile.jpeg' %}"
+             alt="Ilya Haider"
+             class="profile-pic">
 
-</div>    <div class="hero-content">
-
-        <h1 class="title">
+        <h1>
             Ilya Haider
         </h1>
 
@@ -78,18 +75,57 @@
         </h3>
 
         <p>
+
             Building modern solutions through technology,
-            research, and innovation.
+            research and innovation.
+
         </p>
 
-        <div class="buttons">
+        <div class="hero-buttons">
 
             <a href="#projects" class="btn">
+
                 View Projects
+
             </a>
 
-            <a href="{% static 'resume/4CV_IlyaHaider.pdf' %}" download class="btn glass">
+            <a href="{% static 'resume/4CV_IlyaHaider.pdf' %}"
+               class="btn btn-outline"
+               download>
+
                 Download Resume
+
+            </a>
+
+        </div>
+
+        <div class="social-links">
+
+            <a href="mailto:ilyahaider15313@gmail.com">
+
+                <i class="fas fa-envelope"></i>
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/ilya-haider-aa35a2385"
+               target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+            <a href="https://github.com/ilyahaider"
+               target="_blank">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+            <a href="https://www.kaggle.com/sanachips"
+               target="_blank">
+
+                <i class="fab fa-kaggle"></i>
+
             </a>
 
         </div>
@@ -99,25 +135,29 @@
 </section>
 
 <!-- ABOUT -->
+
 <section id="about" class="section">
 
     <h2>About Me</h2>
 
-    <div class="glass-card">
+    <div class="card">
 
         <p>
-            I am Ilya Haider  from Gilgit Pakistan.
-            A passionate Lecturer, Researcher, and Software Engineer.
-        </p>
 
-        <p>
-            Currently working as Visiting Lecturer in KIU Gilgit
+            I am Ilya Haider from Gilgit, Pakistan.
+
+            Working as Visiting Lecturer at KIU Gilgit
             and Teacher at APS Gilgit.
+
         </p>
 
         <p>
-            Experienced in Django, AI Research, Data Science,
-            Java, C++, .NET and Arduino based systems.
+
+            Highly motivated to engage in cutting-edge research within a collaborative lab environment. Aiming
+            to strengthen technical and analytical skills through hands-on investigation of real-world problems.
+            Curious and committed to continuous learning, with the goal of growing as an independent and
+            impactful researcher.
+
         </p>
 
     </div>
@@ -125,19 +165,27 @@
 </section>
 
 <!-- SKILLS -->
+
 <section id="skills" class="section">
 
     <h2>Technical Skills</h2>
 
-    <div class="skills-container">
+    <div class="skills-grid">
 
         <div class="skill-card">Python</div>
+
         <div class="skill-card">Django</div>
+
         <div class="skill-card">Java</div>
+
         <div class="skill-card">C++</div>
+
         <div class="skill-card">.NET</div>
-        <div class="skill-card">AI Research</div>
+
         <div class="skill-card">Data Science</div>
+
+        <div class="skill-card">AI Research</div>
+
         <div class="skill-card">Arduino</div>
 
     </div>
@@ -145,13 +193,14 @@
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects" class="section">
 
     <h2>Projects</h2>
 
     <div class="project-grid">
 
-        <div class="project-card">
+        <a href="/project/bert-vs-llama/" class="project-card">
 
             <h3>BERT vs LLAMA</h3>
 
@@ -159,232 +208,166 @@
                 Research comparison between modern AI models.
             </p>
 
-        </div>
+        </a>
 
-        <div class="project-card">
+        <a href="/project/school-management-system/"
+           class="project-card">
 
             <h3>School Management System</h3>
 
             <p>
-                Python Django based web application.
+                Django based educational management system.
             </p>
 
-        </div>
+        </a>
 
-        <div class="project-card">
+        <a href="/project/blood-bank-system/"
+           class="project-card">
 
             <h3>Blood Bank System</h3>
 
             <p>
-                Java desktop management application.
+                Java based management solution.
             </p>
 
-        </div>
+        </a>
 
-        <div class="project-card">
+        <a href="/project/arduino-projects/"
+           class="project-card">
 
             <h3>Arduino Projects</h3>
 
             <p>
-                Hardware and embedded systems projects.
+                Hardware and embedded solutions.
             </p>
 
-        </div>
+        </a>
 
     </div>
 
 </section>
+
+<!-- CERTIFICATES -->
+
 <section id="certifications" class="section">
 
     <h2>Certifications</h2>
 
     <div class="certificate-grid">
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert1.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert1.png' %}" alt="Certificate 1">
-            </a>
-            <h3>EPP Participation</h3>
-        </div>
+        {% for i in "123456789" %}
+        {% endfor %}
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert2.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert2.png' %}" alt="Certificate 2">
-            </a>
-            <h3>Cyber Security</h3>
-        </div>
+        <a href="{% static 'certificates/cert1.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert1.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert3.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert3.png' %}" alt="Certificate 3">
-            </a>
-            <h3>Data Analytics & Visualisation</h3>
-        </div>
+        <a href="{% static 'certificates/cert2.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert2.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert4.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert4.png' %}" alt="Certificate 4">
-            </a>
-            <h3>Power BI</h3>
-        </div>
+        <a href="{% static 'certificates/cert3.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert3.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert5.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert5.png' %}" alt="Certificate 5">
-            </a>
-            <h3>LearnOBots STEAM Camps</h3>
-        </div>
+        <a href="{% static 'certificates/cert4.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert4.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert6.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert6.png' %}" alt="Certificate 6">
-            </a>
-            <h3>Arts, Science and Islamic Science Exhibition Season 2</h3>
-        </div>
+        <a href="{% static 'certificates/cert5.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert5.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert7.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert7.png' %}" alt="Certificate 7">
-            </a>
-            <h3>Arts, Science and Islamic Science Exhibition Season 3</h3>
-        </div>
+        <a href="{% static 'certificates/cert6.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert6.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert8.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert8.png' %}" alt="Certificate 8">
-            </a>
-            <h3>.Programming Quiz</h3>
-        </div>
+        <a href="{% static 'certificates/cert7.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert7.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert9.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert9.png' %}" alt="Certificate 9">
-            </a>
-            <h3>IELTS</h3>
-        </div>
+        <a href="{% static 'certificates/cert8.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert8.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert10.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert10.png' %}" alt="Certificate 10">
-            </a>
-            <h3>Driving Training & Safety</h3>
-        </div>
+        <a href="{% static 'certificates/cert9.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert9.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert11.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert11.png' %}" alt="Certificate 11">
-            </a>
-            <h3>Award Distribution Cermony</h3>
-        </div>
+        <a href="{% static 'certificates/cert10.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert10.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert12.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert12.png' %}" alt="Certificate 12">
-            </a>
-            <h3>Book Reading Award</h3>
-        </div>
+        <a href="{% static 'certificates/cert11.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert11.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert13.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert13.png' %}" alt="Certificate 13">
-            </a>
-            <h3>Writing Competition</h3>
-        </div>
+        <a href="{% static 'certificates/cert12.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert12.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert14.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert14.png' %}" alt="Certificate 14">
-            </a>
-            <h3>Library Week</h3>
-        </div>
+        <a href="{% static 'certificates/cert13.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert13.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert15.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert15.png' %}" alt="Certificate 15">
-            </a>
-            <h3>2nd Position is English Drama</h3>
-        </div>
+        <a href="{% static 'certificates/cert14.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert14.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert16.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert16.png' %}" alt="Certificate 16">
-            </a>
-            <h3>Good Performance</h3>
-        </div>
+        <a href="{% static 'certificates/cert15.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert15.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert17.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert17.png' %}" alt="Certificate 17">
-            </a>
-            <h3>IGAP 2021</h3>
-        </div>
+        <a href="{% static 'certificates/cert16.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert16.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert18.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert18.png' %}" alt="Certificate 18">
-            </a>
-            <h3>Participation in Muharram</h3>
-        </div>
+        <a href="{% static 'certificates/cert17.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert17.png' %}">
+        </a>
 
-        <div class="certificate-card">
-            <a href="{% static 'certificates/cert19.png' %}" target="_blank">
-                <img src="{% static 'certificates/cert19.png' %}" alt="Certificate 19">
-            </a>
-            <h3>Passing of Islamic Sciences</h3>
-        </div>
+        <a href="{% static 'certificates/cert18.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert18.png' %}">
+        </a>
+
+        <a href="{% static 'certificates/cert19.png' %}" target="_blank" class="certificate-card">
+            <img src="{% static 'certificates/cert19.png' %}">
+        </a>
 
     </div>
 
 </section>
-<div class="social-links">
 
-    <a href="mailto:ilyahaider15313@gmail.com" target="_blank">
-
-        <i class="fas fa-envelope"></i>
-
-    </a>
-
-    <a href="https://www.linkedin.com/in/ilya-haider-aa35a2385"
-       target="_blank">
-
-        <i class="fab fa-linkedin"></i>
-
-    </a>
-
-    <a href="https://github.com/ilyahaider"
-       target="_blank">
-
-        <i class="fab fa-github"></i>
-
-    </a>
-
-    <a href="https://www.kaggle.com/sanachips"
-       target="_blank">
-
-        <i class="fab fa-kaggle"></i>
-
-    </a>
-
-</div>
 <!-- CONTACT -->
+
 <section id="contact" class="section">
 
     <h2>Contact</h2>
 
-    <div class="glass-card contact-box">
+    <div class="card">
 
         <form method="POST">
 
             {% csrf_token %}
 
-            <input type="text" name="name" placeholder="Your Name">
+            <input type="text"
+                   name="name"
+                   placeholder="Your Name"
+                   required>
 
-            <input type="email" name="email" placeholder="Your Email">
+            <input type="email"
+                   name="email"
+                   placeholder="Your Email"
+                   required>
 
-            <textarea name="message" placeholder="Your Message"></textarea>
+            <textarea name="message"
+                      placeholder="Your Message"
+                      required></textarea>
 
             <button type="submit" class="btn">
+
                 Send Message
+
             </button>
 
         </form>
@@ -392,6 +375,12 @@
     </div>
 
 </section>
+
+<footer>
+
+    © 2026 Ilya Haider
+
+</footer>
 
 <script src="{% static 'js/script.js' %}"></script>
 

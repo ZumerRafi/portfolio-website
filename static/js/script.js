@@ -1,105 +1,61 @@
-console.log("Portfolio Loaded");
+// =========================
+// MOBILE HAMBURGER MENU
+// =========================
 
+document.addEventListener("DOMContentLoaded", function () {
 
-/* PARTICLES OPTIMIZED */
+    const menuBtn = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-particlesJS("particles-js", {
+    if (menuBtn && navLinks) {
 
-    particles: {
+        menuBtn.addEventListener("click", function () {
 
-        number: {
-            value: 40
-        },
+            navLinks.classList.toggle("active");
 
-        size: {
-            value: 2
-        },
+            const icon = menuBtn.querySelector("i");
 
-        move: {
-            speed: 1
-        },
+            if (navLinks.classList.contains("active")) {
 
-        line_linked: {
-            enable: true,
-            opacity: 0.2
-        }
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
 
-    },
+            } else {
 
-    retina_detect: true
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
 
-});
+            }
 
+        });
 
-/* FORCE BUTTON VISIBILITY */
+        // Close menu after clicking a link
 
-window.onload = () => {
+        document.querySelectorAll(".nav-links a").forEach(link => {
 
-    document.querySelectorAll(".btn").forEach(btn => {
+            link.addEventListener("click", () => {
 
-        btn.style.opacity = "1";
-        btn.style.visibility = "visible";
+                navLinks.classList.remove("active");
 
-    });
+                const icon = menuBtn.querySelector("i");
 
-};
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
 
+            });
 
-/* GSAP LIGHTWEIGHT ANIMATIONS */
-
-gsap.from(".title", {
-
-    y: -50,
-    opacity: 0,
-    duration: 1
-
-});
-
-gsap.from(".hero h3", {
-
-    opacity: 0,
-    duration: 1,
-    delay: 0.5
-
-});
-
-gsap.from(".hero p", {
-
-    opacity: 0,
-    duration: 1,
-    delay: 1
-
-});
-
-gsap.from(".btn", {
-
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    delay: 1.2,
-    stagger: 0.2
-
-});
-
-
-/* CLOSE TOAST */
-
-function closeToast() {
-
-    const toast = document.getElementById("toast");
-
-    if (toast) {
-
-        toast.style.display = "none";
+        });
 
     }
 
-}
+});
 
 
-/* AUTO HIDE TOAST ONLY IF EXISTS */
+// =========================
+// AUTO HIDE SUCCESS TOAST
+// =========================
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     const toast = document.getElementById("toast");
 
@@ -107,10 +63,104 @@ window.addEventListener("load", () => {
 
         setTimeout(() => {
 
-            toast.style.display = "none";
+            toast.style.opacity = "0";
+
+            setTimeout(() => {
+
+                toast.style.display = "none";
+
+            }, 500);
 
         }, 4000);
 
     }
+
+});
+
+
+// =========================
+// SMOOTH REVEAL ANIMATION
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    document.querySelectorAll(
+        ".section, .skill-card, .project-card, .certificate-card"
+    ).forEach((el) => {
+
+        el.classList.add("hidden");
+
+        observer.observe(el);
+
+    });
+
+});
+
+
+// =========================
+// SCROLL TO TOP BUTTON
+// =========================
+
+const scrollBtn = document.createElement("button");
+
+scrollBtn.innerHTML = "↑";
+
+scrollBtn.id = "scrollTopBtn";
+
+document.body.appendChild(scrollBtn);
+
+scrollBtn.style.position = "fixed";
+scrollBtn.style.bottom = "20px";
+scrollBtn.style.right = "20px";
+scrollBtn.style.width = "50px";
+scrollBtn.style.height = "50px";
+scrollBtn.style.borderRadius = "50%";
+scrollBtn.style.border = "none";
+scrollBtn.style.background = "#38bdf8";
+scrollBtn.style.color = "#000";
+scrollBtn.style.fontSize = "22px";
+scrollBtn.style.cursor = "pointer";
+scrollBtn.style.display = "none";
+scrollBtn.style.zIndex = "999";
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        scrollBtn.style.display = "block";
+
+    } else {
+
+        scrollBtn.style.display = "none";
+
+    }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
 
 });
