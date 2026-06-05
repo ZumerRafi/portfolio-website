@@ -665,3 +665,151 @@ footer{
     opacity:1;
     transform:translateY(0);
 }
+.hero-title i{
+    color:#38bdf8;
+    margin-right:12px;
+}
+
+.hero-subtitle i{
+    color:#38bdf8;
+}
+
+.section h2{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.section h2 i{
+    color:#38bdf8;
+}
+
+/* Glass Cards */
+
+.card,
+.skill-card,
+.project-card,
+.certificate-card{
+
+    background:rgba(15,23,42,.8);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(56,189,248,.2);
+
+    box-shadow:
+    0 0 20px rgba(56,189,248,.08);
+
+}
+
+/* Hover Glow */
+
+.card:hover,
+.skill-card:hover,
+.project-card:hover,
+.certificate-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38bdf8;
+
+    box-shadow:
+    0 0 30px rgba(56,189,248,.4);
+
+}
+
+/* Skills */
+
+.skill-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.skill-card i{
+
+    font-size:35px;
+
+    color:#38bdf8;
+
+}
+
+/* Projects */
+
+.project-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(56,189,248,.1);
+
+    margin-bottom:20px;
+
+}
+
+.project-icon i{
+
+    color:#38bdf8;
+
+    font-size:34px;
+
+}
+
+.view-link{
+
+    margin-top:20px;
+
+    color:#38bdf8;
+
+    font-weight:600;
+
+}
+
+/* Certificates */
+
+.certificate-card{
+
+    overflow:hidden;
+
+}
+
+.certificate-card img{
+
+    transition:.4s;
+
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* Profile Glow */
+
+.profile-pic{
+
+    border:4px solid #38bdf8;
+
+    box-shadow:
+    0 0 30px rgba(56,189,248,.5),
+    0 0 70px rgba(56,189,248,.25);
+
+}
