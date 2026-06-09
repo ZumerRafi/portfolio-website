@@ -813,3 +813,16 @@ footer{
     0 0 70px rgba(56,189,248,.25);
 
 }
+.certificate-card h3{
+    padding:15px;
+    text-align:center;
+    color:#38bdf8;
+    font-size:16px;
+    font-weight:600;
+}
+
+.certificate-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
